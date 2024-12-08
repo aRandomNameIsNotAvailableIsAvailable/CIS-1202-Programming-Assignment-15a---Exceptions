@@ -61,7 +61,7 @@ int main() {
         cout << endl << endl;
         cout << character('a', 1);
         cout << endl << endl;
-        cout << character('a', -1);
+       // cout << character('a', -1);
         cout << endl << endl;
         cout << character('z', -1);
         cout << endl << endl;
