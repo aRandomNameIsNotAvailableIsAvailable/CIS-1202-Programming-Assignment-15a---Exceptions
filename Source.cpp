@@ -17,7 +17,7 @@ using namespace std;
 // classes
 
 // exception for invalid character
-class invalidCharacterException : public std::exception {
+class invalidCharacterException : public exception {
 public:
     const char* what() const noexcept override {
         return "Invalid character. Use a letter (A-Z, a-z).";
@@ -25,7 +25,7 @@ public:
 };
 
 // exception for invalid range
-class invalidRangeException : public std::exception {
+class invalidRangeException : public exception {
 public:
     const char* what() const noexcept override {
         return "Out of range. Use a letter (A-Z, a-z).";
@@ -56,8 +56,15 @@ char character(char start, int offset) {
 
 int main() {
 
-    cout << character(32, 2);
-
+    try {
+        cout << character('a', 2);
+    }
+    catch (const invalidCharacterException& nope) {
+        cerr << nope.what() << endl;
+    }
+    catch (const invalidRangeException& nope) {
+        cerr << nope.what() << endl;
+    }
 
 	//											+++END MAIN+++
 
