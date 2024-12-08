@@ -58,6 +58,15 @@ int main() {
 
     try {
         cout << character('a', 2);
+        cout << endl << endl;
+        cout << character('a', 1);
+        cout << endl << endl;
+        cout << character('a', -1);
+        cout << endl << endl;
+        cout << character('z', -1);
+        cout << endl << endl;
+        cout << character('?', 5);
+
     }
     catch (const invalidCharacterException& nope) {
         cerr << nope.what() << endl;
