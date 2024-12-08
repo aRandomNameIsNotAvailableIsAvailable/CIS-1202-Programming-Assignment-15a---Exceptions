@@ -36,7 +36,7 @@ int main() {
 
 	system("pause");
 
-	cout << character('A', 32);
+	cout << character(4, 32);
 
 
 	//											+++END MAIN+++
