@@ -11,16 +11,52 @@ Project Description: Write a function to calculate character offsets, throwing e
 #include<iostream>
 #include<stdexcept> // For exceptions
 
-
 // namespace
 using namespace std;
 
+// classes
+
+// exception for invalid character
+class invalidCharacterException : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Invalid character. Use a letter (A-Z, a-z).";
+    }
+};
+
+// exception for invalid range
+class invalidRangeException : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "Out of range. Use a letter (A-Z, a-z).";
+    }
+};
+
+// functions
+
+// calculate the character offset
+char character(char start, int offset) {
+    // Check if start character is a valid letter
+    if (!(isalpha(start))) {
+        throw invalidCharacterException();
+    }
+
+    // Calculate the value of the character
+    char value = start + offset;
+
+    // Check if the value of the character is a valid letter
+    if (!(isalpha(value))) {
+        throw invalidRangeException();
+    }
+
+    return value;
+}
 
 	//											+++Start Main+++
 
 int main() {
 
-
+    cout << character(32, 2);
 
 
 	//											+++END MAIN+++
