@@ -22,8 +22,9 @@ char character(char start, int offset);
 int main() {
 
 
+	cout << "test output\n\n";
 
-
+	system("pause");
 
 
 
@@ -37,5 +38,12 @@ int main() {
 
 char character(char start, int offset) 
 {
-	return;
+	if ((!start)) {
+		//2.	If start is not a letter (A-Z, a-z), throw an invalidCharacterExcpeption.
+		//3.	If the target is not a letter, throw an invalidRangeException
+		//4.	Otherwise, return the letter described by the start and offset.
+
+
+	}
+	return 0;
 }
