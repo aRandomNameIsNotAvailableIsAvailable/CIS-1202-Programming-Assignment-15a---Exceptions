@@ -47,26 +47,28 @@ int main() {
 
 }
 
-char character(char start, int offset) 
-{
-	char range;
+// Function to calculate the character after applying the offset
+char character(char start, int offset) {
+    // Check if the start character is a valid letter
+    if (!isalpha(start)) {
+        throw invalidCharacterException();
+    }
 
-	if ((!start)) {
-		//2.	If start is not a letter (A-Z, a-z), throw an invalidCharacterExcpeption.
-		    if (!isalpha(start)) {
-		throw invalidCharacterException();
-	}
-		//3.	If the target is not a letter, throw an invalidRangeException
-			
-			if (isupper(start)) {
-				range = 'A' + (start - 'A' + offset) % 26;
-			}
-			else if (islower(start)) {
-				range = 'a' + (start - 'a' + offset) % 26;
-			}
-		//4.	Otherwise, return the letter described by the start and offset.
+    // Calculate the target character using the offset
+    char range;
 
+    // Determine if the start is an uppercase or lowercase letter
+    if (isupper(start)) {
+        range = 'A' + (start - 'A' + offset) % 26;
+    }
+    else if (islower(start)) {
+        range = 'a' + (start - 'a' + offset) % 26;
+    }
 
-	}
-	return range;
+    // Check if the target character is a valid letter
+    if (!isalpha(range)) {
+       // throw invalidRangeException();
+    }
+
+    return range;
 }
