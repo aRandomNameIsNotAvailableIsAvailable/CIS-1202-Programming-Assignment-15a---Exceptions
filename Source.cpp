@@ -57,14 +57,53 @@ char character(char start, int offset) {
 int main() {
 
     try {
-        cout << character('a', 2);
+
         cout << endl << endl;
         cout << character('a', 1);
         cout << endl << endl;
-       // cout << character('a', -1);
+
+
+    }
+    catch (const invalidCharacterException& nope) {
+        cerr << nope.what() << endl;
+    }
+    catch (const invalidRangeException& nope) {
+        cerr << nope.what() << endl;
+    }
+
+    try {
+
+      
+        cout << character('a', -1);
         cout << endl << endl;
+    
+
+    }
+    catch (const invalidCharacterException& nope) {
+        cerr << nope.what() << endl;
+    }
+    catch (const invalidRangeException& nope) {
+        cerr << nope.what() << endl;
+    }
+
+    try {
+
+     
+
         cout << character('z', -1);
         cout << endl << endl;
+  
+
+    }
+    catch (const invalidCharacterException& nope) {
+        cerr << nope.what() << endl;
+    }
+    catch (const invalidRangeException& nope) {
+        cerr << nope.what() << endl;
+    }
+
+    try {
+
         cout << character('?', 5);
 
     }
@@ -74,6 +113,7 @@ int main() {
     catch (const invalidRangeException& nope) {
         cerr << nope.what() << endl;
     }
+
 
 	//											+++END MAIN+++
 
