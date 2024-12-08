@@ -7,7 +7,6 @@ Project Description: Write a function to calculate character offsets, throwing e
 
 // libraries
 #include<cmath>
-#include<fstream>
 #include<iomanip>
 #include<iostream>
 #include<string>
