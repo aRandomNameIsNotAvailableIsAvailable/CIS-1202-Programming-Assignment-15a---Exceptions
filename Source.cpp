@@ -28,7 +28,7 @@ public:
 class invalidRangeException : public exception {
 public:
     const char* what() const noexcept override {
-        return "Out of range. Use a letter (A-Z, a-z).";
+        return "Out of range.";
     }
 };
 
@@ -56,64 +56,72 @@ char character(char start, int offset) {
 
 int main() {
 
+    // test function and exceptions with drivers using multiple sample outputs
     try {
-
-        cout << endl << endl;
-        cout << character('a', 1);
-        cout << endl << endl;
-
-
-    }
-    catch (const invalidCharacterException& nope) {
-        cerr << nope.what() << endl;
-    }
-    catch (const invalidRangeException& nope) {
-        cerr << nope.what() << endl;
-    }
+        cout << "character('a', 1) = " << character('a', 1);
+        cout << endl;
+        }
+        catch (const invalidCharacterException& nope) {
+            cerr << nope.what() << endl;
+        }
+        catch (const invalidRangeException& nope) {
+            cerr << nope.what() << endl;
+        }
 
     try {
-
-      
-        cout << character('a', -1);
-        cout << endl << endl;
-    
-
-    }
-    catch (const invalidCharacterException& nope) {
-        cerr << nope.what() << endl;
-    }
-    catch (const invalidRangeException& nope) {
-        cerr << nope.what() << endl;
-    }
+        cout << "character('a', -1) = " << character('a', -1);
+        cout << endl;
+        }
+        catch (const invalidCharacterException& nope) {
+            cerr << nope.what() << endl;
+        }
+        catch (const invalidRangeException& nope) {
+            cerr << nope.what() << endl;
+        }
 
     try {
-
-     
-
-        cout << character('z', -1);
-        cout << endl << endl;
-  
-
-    }
-    catch (const invalidCharacterException& nope) {
-        cerr << nope.what() << endl;
-    }
-    catch (const invalidRangeException& nope) {
-        cerr << nope.what() << endl;
-    }
+        cout << "character('z', -1) = " << character('z', -1);
+        cout << endl;
+        }
+        catch (const invalidCharacterException& nope) {
+            cerr << nope.what() << endl;
+        }
+        catch (const invalidRangeException& nope) {
+            cerr << nope.what() << endl;
+        }
 
     try {
+        cout << "character('?', 5) = " << character('?', 5);
+        cout << endl;
+        }
+        catch (const invalidCharacterException& nope) {
+            cerr << nope.what() << endl;
+        }
+        catch (const invalidRangeException& nope) {
+            cerr << nope.what() << endl;
+        }
 
-        cout << character('?', 5);
+    try {
+            cout << "character('A', 32) = " << character('A', 32);
+            cout << endl;
+        }
+        catch (const invalidCharacterException& nope) {
+            cerr << nope.what() << endl;
+        }
+        catch (const invalidRangeException& nope) {
+            cerr << nope.what() << endl;
+        }
 
-    }
-    catch (const invalidCharacterException& nope) {
-        cerr << nope.what() << endl;
-    }
-    catch (const invalidRangeException& nope) {
-        cerr << nope.what() << endl;
-    }
-
+    //try {
+    //        cout << "character('a', 32) = " << character('a', 32);
+    //        cout << endl;
+    //    }
+    //    catch (const invalidCharacterException& nope) {
+    //        cerr << nope.what() << endl;
+    //    }
+    //    catch (const invalidRangeException& nope) {
+    //        cerr << nope.what() << endl;
+    //    }
 
 	//											+++END MAIN+++
 
