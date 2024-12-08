@@ -6,37 +6,20 @@ Project Description: Write a function to calculate character offsets, throwing e
 */
 
 // libraries
-#include<cmath>
-#include<iomanip>
-#include<iostream>
-#include<string>
-#include<vector>
 
+#include<iostream>
+#include<stdexcept> // For exceptions
 
 // namespace
 using namespace std;
 
 // function prototypes
 
-void emptyFunction();
-
-// classes
-
-class emptyClass {
-private:
-	int emptyPrivateNum_01;
-	string emptyPrivateString_01;
-public:
-	int emptyPublicNum_01;
-	string emptyPublicString_01;
-};
+char character(char start, int offset);
 
 	//											+++Start Main+++
 
 int main() {
-
-	// declare variables
-
 
 
 
@@ -52,12 +35,7 @@ int main() {
 
 }
 
-// function definitions
-
-void emptyFunction()
+char character(char start, int offset) 
 {
-	
+	return;
 }
-
-// class definitions
-
