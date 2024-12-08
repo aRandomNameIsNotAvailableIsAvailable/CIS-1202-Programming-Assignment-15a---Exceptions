@@ -33,10 +33,10 @@ int main() {
 
 	cout << "test output\n\n";
 
-	character(3, 32);
 
 	system("pause");
 
+	cout << character('A', 32);
 
 
 	//											+++END MAIN+++
@@ -49,15 +49,24 @@ int main() {
 
 char character(char start, int offset) 
 {
+	char range;
+
 	if ((!start)) {
 		//2.	If start is not a letter (A-Z, a-z), throw an invalidCharacterExcpeption.
 		    if (!isalpha(start)) {
 		throw invalidCharacterException();
 	}
 		//3.	If the target is not a letter, throw an invalidRangeException
+			
+			if (isupper(start)) {
+				range = 'A' + (start - 'A' + offset) % 26;
+			}
+			else if (islower(start)) {
+				range = 'a' + (start - 'a' + offset) % 26;
+			}
 		//4.	Otherwise, return the letter described by the start and offset.
 
 
 	}
-	return 0;
+	return range;
 }
